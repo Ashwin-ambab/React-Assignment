@@ -51,7 +51,7 @@ const BookForm = (props) => {
         </div>
         <div className="control">
           <label htmlFor="number" >
-            Phone Number
+            Total Page
           </label>
           <input type="number" id="number" ref={numberInputRef}/>
         </div>
