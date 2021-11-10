@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { useState } from "react";
+import Button from "../Button/Button";
 
 const EditBook = () => {
   const history = useHistory();
@@ -12,23 +12,6 @@ const EditBook = () => {
   const [author, setAuthor] = useState("");
   const [genre, setGenre] = useState("");
   const [number, setNumber] = useState("");
-
-  // useEffect(() => {
-  //     var users = JSON.parse(localStorage.getItem("users"));
-  //     var user = [];
-  //     console.log(users);
-  //     users.forEach(element => {
-  //         if(element.id === id) {
-  //             setUser(element);
-  //             setUsername(element.username);
-  //             setLastname(element.lastname);
-  //             setEmail(element.email);
-  //             setNumber(element.number);
-  //         }
-  //     });
-  // },[])
-
-  // console.log(user);
 
     useEffect(() => {
     setID(localStorage.getItem("ID"));
@@ -84,7 +67,7 @@ const EditBook = () => {
           />
         </div>
         <div className="control">
-          <label htmlFor="number">Phone Number</label>
+          <label htmlFor="number">Total page</label>
           <input
             type="number"
             id="number"
@@ -93,7 +76,7 @@ const EditBook = () => {
           />
         </div>
         <div className="actions">
-          <button type="submit">update</button>
+          <Button type="submit">update</Button>
         </div>
       </form>
     </div>

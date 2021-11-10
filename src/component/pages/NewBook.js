@@ -10,23 +10,22 @@ const NewBook = (props) => {
     // const[number,setNumber] = useState('');
 
 
-  const onAddContactHandler = (contactData) => {
+  const onAddBookHandler = (BookData) => {
     fetch("http://localhost:3003/Books", {
       method: "POST",
-      body: JSON.stringify(contactData),
+      body: JSON.stringify(BookData),
       headers: {
         "Content-Type": "application/json",
       },
     }).then(() => {
       history.push('/');
     });
-    // console.log(contactData);
+    // console.log(Data);
   };
 
   return (
     <div>
-      <BookForm addContact={onAddContactHandler} />
-      <h1>ewuirif</h1>
+      <BookForm addContact={onAddBookHandler} />
     </div>
   );
 };

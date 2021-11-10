@@ -5,6 +5,7 @@ import Footer from "./component/Footer/Footer";
 import { Switch, Route } from "react-router-dom";
 import AllBooks from "./component/pages/AllBooks";
 import EditBook from "./component/pages/EditBook"
+import BookDetail from "./component/pages/BookDetail";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
         </Route>
         <Route path="/newbook/edit/:id" exact>
           <EditBook />
+        </Route>
+        <Route path="/newbook/:id" exact>
+          <BookDetail />
         </Route>
       </Switch>
       <Footer />

@@ -1,4 +1,5 @@
 import React, { useRef} from "react";
+import Button from "../Button/Button";
 
 import './BookForm.css'
 
@@ -16,6 +17,11 @@ const BookForm = (props) => {
       const enteredAuthor = authorInputRef.current.value;
       const enteredGenre = genreInputRef.current.value;
       const enteredNumber = numberInputRef.current.value;
+
+      if(enteredBook === "" || enteredAuthor === "" || enteredGenre === "" || enteredNumber === ""){
+        alert("All fields are mandatory");
+        return;
+      }
 
       const booksData = {
           book: enteredBook,
@@ -56,7 +62,7 @@ const BookForm = (props) => {
           <input type="number" id="number" ref={numberInputRef}/>
         </div>
         <div className="actions">
-      <button>Submit</button>
+      <Button type="submit">Submit</Button>
       </div>
     </form>
     </div>
